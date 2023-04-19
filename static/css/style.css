@@ -1,0 +1,28 @@
+button{
+    padding: 10px;
+    min-height: 30px;
+    min-width: 250px;
+    color: #fff;
+    border: 0px solid;
+    border-radius: 2px;
+}
+.form{
+    width: 500px;
+    min-height: 250px;
+    border: 1px solid #000;
+    text-align: center;
+    align-items: center;
+    border-radius: 30px;
+    padding: 30px;
+}
+input{
+    height: 40px;
+    width: 250px;
+    border: 1px solid gray;
+    border-radius: 10px;  
+    padding-left: 20px;  
+    margin-top: 20px;
+}
+h1{
+    font-size: 30px;font-weight: bold;
+}

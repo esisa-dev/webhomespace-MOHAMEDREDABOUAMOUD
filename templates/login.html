@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn -> Users</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <center>
+        <h1 >For Users</h1>
+        <form action="/login" method="post" class="form">
+            <label style="display: block;">* User Name *</label>
+            <input type="text" placeholder="enter your user name" name="login">
+            <label style="display: block;margin-top: 20px;">* User Password *</label>
+            <input type="password" placeholder="enter your password" name="password"><br><br>
+            <button type="submit" style="font-size: 20px;font-weight: bold;background-color: gray;">Login</button><br><br>
+            <button type="submit" style="font-size: 20px;font-weight: bold;background-color: gray;"><a style="color: #fff;" href="/signUpp">SignUp</a></button><br><br>
+        </form>
+        <h6 style="color:red">{{error_auth}}</h6><br><br><br>
+    </center>
+</body>
+</html>

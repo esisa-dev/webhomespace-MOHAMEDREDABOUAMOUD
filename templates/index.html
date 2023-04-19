@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard user</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <form action="/Index" method="post">
+        <button id="user" name="button" value="user" style="background-color: blue;">All</button>
+        <button id="dirs" name="button" value="directories" style="background-color: blue;">directories</button>
+        <button id="files" name="button" value="files" style="background-color: red;">files</button>
+        <button id="space" name="button" value="space" style="background-color: green;">space</button>
+        <button id="logout" name="button" value="logout" style="background-color: deeppink;">logout</button>
+        <h1>Hello</h1>
+        <label>{{ var }}</label>
+        <ul>
+       {% for dir in dirs %}
+        <li><button name="button" value="{{ dir }}" style="background-color:cornflowerblue ;">{{ dir }}</button></li>
+        {% endfor %}
+    </form>
+</body>
+</html>        

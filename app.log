@@ -1,0 +1,119 @@
+2023-04-15 01:54:19,250 - myapp - INFO - reda1 logged in
+2023-04-15 01:54:23,387 - myapp - INFO - reda1 logged out
+2023-04-15 02:01:41,838 - myapp - INFO - reda1 logged in
+2023-04-15 02:02:13,159 - myapp - INFO - reda1 logged in
+2023-04-15 02:03:55,030 - myapp - INFO - reda1 logged in
+2023-04-15 02:05:10,353 - myapp - INFO - reda1 logged in
+2023-04-15 02:05:12,304 - myapp - INFO - reda1 logged out
+2023-04-15 02:05:13,800 - myapp - INFO - reda1 logged in
+2023-04-15 02:07:30,031 - myapp - INFO - reda1 logged out
+2023-04-15 02:07:31,459 - myapp - INFO - reda1 logged in
+2023-04-15 02:14:28,234 - myapp - INFO - reda1 logged in
+2023-04-15 02:21:41,816 - myapp - INFO - reda1 logged in
+2023-04-15 02:25:19,455 - myapp - INFO - reda1 logged out
+2023-04-15 02:25:22,701 - myapp - INFO - reda2 logged in
+2023-04-15 02:52:49,159 - myapp - INFO - reda2 logged in
+2023-04-15 02:52:57,168 - myapp - INFO - reda2 logged out
+2023-04-15 02:53:03,160 - myapp - WARNING - Invalid login attempt for user reda4
+2023-04-15 03:00:09,757 - myapp - INFO - reda4 signed up
+2023-04-15 03:00:20,315 - myapp - INFO - reda4 logged out
+2023-04-15 03:00:23,605 - myapp - INFO - reda4 signed up
+2023-04-18 23:10:06,775 - myapp - INFO - reda logged in
+2023-04-18 23:29:21,235 - myapp - INFO - reda logged in
+2023-04-18 23:29:32,757 - myapp - INFO - reda logged in
+2023-04-18 23:30:39,215 - myapp - INFO - reda logged in
+2023-04-18 23:52:19,019 - myapp - INFO - reda logged in
+2023-04-19 00:15:51,236 - myapp - INFO - reda logged in
+2023-04-19 00:16:38,541 - myapp - INFO - reda1 logged in
+2023-04-19 00:17:53,651 - myapp - INFO - reda1 signed up
+2023-04-19 00:25:39,663 - myapp - INFO - reda1 signed up
+2023-04-19 00:27:33,228 - myapp - INFO - reda1 signed up
+2023-04-19 00:29:30,122 - myapp - INFO - reda logged in
+2023-04-19 00:30:14,590 - myapp - INFO - reda1 signed up
+2023-04-19 00:32:47,122 - myapp - WARNING - Invalid login attempt for user reda1
+2023-04-19 00:32:48,728 - myapp - WARNING - Invalid login attempt for user reda1
+2023-04-19 00:32:50,182 - myapp - WARNING - Invalid login attempt for user reda1
+2023-04-19 00:34:06,816 - myapp - INFO - reda logged in
+2023-04-19 00:34:33,202 - myapp - INFO - reda1 signed up
+2023-04-19 00:34:46,146 - myapp - WARNING - Invalid login attempt for user reda1
+2023-04-19 00:34:49,077 - myapp - WARNING - Invalid login attempt for user reda1
+2023-04-19 00:35:11,670 - myapp - INFO - reda1 signed up
+2023-04-19 00:38:43,688 - myapp - INFO - reda1 signed up
+2023-04-19 00:38:45,290 - myapp - INFO - reda1 logged out
+2023-04-19 00:40:33,288 - myapp - INFO - reda logged in
+2023-04-19 00:40:36,236 - myapp - INFO - reda logged out
+2023-04-19 00:42:06,005 - myapp - INFO - reda logged in
+2023-04-19 00:42:07,416 - myapp - INFO - reda logged out
+2023-04-19 00:46:04,684 - myapp - INFO - reda logged in
+2023-04-19 00:46:06,320 - myapp - INFO - reda logged out
+2023-04-19 00:54:47,047 - myapp - INFO - reda logged in
+2023-04-19 00:55:49,790 - myapp - INFO - reda logged in
+2023-04-19 00:57:25,359 - myapp - INFO - reda logged in
+2023-04-19 00:57:27,881 - myapp - INFO - reda logged out
+2023-04-19 00:58:26,012 - myapp - INFO - reda logged in
+2023-04-19 00:58:27,180 - myapp - INFO - reda logged out
+2023-04-19 01:09:43,348 - myapp - INFO - reda1 signed up
+2023-04-19 01:09:45,499 - myapp - INFO - reda1 logged out
+2023-04-19 01:09:47,668 - myapp - INFO - reda1 logged in
+2023-04-19 01:13:06,250 - myapp - INFO - reda1 logged in
+2023-04-19 01:13:07,602 - myapp - INFO - reda1 logged out
+2023-04-19 01:13:09,778 - myapp - INFO - reda1 logged in
+2023-04-19 01:13:16,820 - myapp - INFO - reda1 logged out
+2023-04-19 01:13:22,036 - myapp - INFO - reda1 logged in
+2023-04-19 01:13:23,561 - myapp - INFO - reda1 logged out
+2023-04-19 01:13:25,217 - myapp - INFO - reda1 logged in
+2023-04-19 01:13:26,567 - myapp - INFO - reda1 logged out
+2023-04-19 01:13:28,315 - myapp - INFO - reda1 logged in
+2023-04-19 01:33:31,012 - myapp - INFO - reda1 logged in
+2023-04-19 01:35:29,320 - myapp - INFO - reda1 logged in
+2023-04-19 01:47:10,325 - myapp - INFO - reda1 logged in
+2023-04-19 01:50:05,621 - myapp - INFO - reda1 logged in
+2023-04-19 01:57:05,488 - myapp - INFO - reda1 logged in
+2023-04-19 01:57:21,161 - myapp - INFO - reda1 enter to reda1
+2023-04-19 01:57:49,643 - myapp - INFO - reda1 enter to reda1/
+2023-04-19 01:58:20,899 - myapp - INFO - reda1 enter to reda1/
+2023-04-19 01:59:23,964 - myapp - INFO - reda1 logged in
+2023-04-19 01:59:27,926 - myapp - INFO - reda1 enter to reda1
+2023-04-19 01:59:40,919 - myapp - INFO - reda1 enter to reda1/test1
+2023-04-19 02:09:13,414 - myapp - INFO - reda1 logged in
+2023-04-19 02:09:56,234 - myapp - INFO - reda1 logged in
+2023-04-19 02:13:18,138 - myapp - INFO - reda logged in
+2023-04-19 02:13:26,453 - myapp - INFO - reda enter to reda
+2023-04-19 02:13:27,113 - myapp - INFO - reda enter to reda
+2023-04-19 02:13:30,062 - myapp - INFO - reda enter to reda
+2023-04-19 02:13:32,185 - myapp - INFO - reda enter to reda
+2023-04-19 02:14:56,703 - myapp - INFO - reda logged in
+2023-04-19 02:15:00,371 - myapp - INFO - reda enter to reda
+2023-04-19 02:15:06,365 - myapp - INFO - reda enter to reda
+2023-04-19 02:15:10,650 - myapp - INFO - reda enter to reda/Python-3.11.0
+2023-04-19 02:15:14,694 - myapp - INFO - reda enter to reda/Python-3.11.0
+2023-04-19 02:15:17,137 - myapp - INFO - reda enter to reda/Python-3.11.0
+2023-04-19 02:15:24,699 - myapp - INFO - reda enter to reda/Python-3.11.0
+2023-04-19 02:15:28,646 - myapp - INFO - reda enter to reda/Python-3.11.0
+2023-04-19 02:15:28,682 - myapp - INFO - reda logged out
+2023-04-19 02:15:32,452 - myapp - INFO - reda1 logged in
+2023-04-19 02:15:37,023 - myapp - INFO - reda1 enter to reda1
+2023-04-19 02:15:38,441 - myapp - INFO - reda1 enter to reda1/test1
+2023-04-19 02:15:43,932 - myapp - INFO - reda1 enter to reda1/test1/test1
+2023-04-19 12:00:34,607 - myapp - INFO - reda1 logged in
+2023-04-19 12:00:38,784 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:00:41,732 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:00:43,665 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:00:44,720 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:01:17,011 - myapp - INFO - reda1 logged in
+2023-04-19 12:01:20,409 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:01:21,636 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:12:19,324 - myapp - INFO - reda1 logged in
+2023-04-19 12:18:05,659 - myapp - INFO - reda1 logged in
+2023-04-19 12:18:48,818 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:18:49,687 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:18:51,000 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:18:52,000 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:18:52,959 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:18:52,965 - myapp - INFO - reda1 logged out
+2023-04-19 12:23:51,261 - myapp - INFO - reda1 logged in
+2023-04-19 12:23:54,065 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:23:54,801 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:23:55,738 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:23:56,290 - myapp - INFO - reda1 enter to reda1
+2023-04-19 12:23:56,294 - myapp - INFO - reda1 logged out
