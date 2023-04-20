@@ -48,33 +48,46 @@ class Business:
     @staticmethod
     def rechercher(userName,fileName):
         user_dir = os.path.join('/home',userName)
-        for dirictories, name_of_dir, files in os.walk(user_dir):
-            if(fileName in files):
-                return os.path.abspath(fileName)
-        return None
+        filesR=[]
+        for root, name_of_dir, files in os.walk(user_dir):
+            for file in files:
+                if(fileName in file):
+                    fullPath=os.path.join(root,file)
+                    filesR.append((file,False,os.stat(fullPath).st_size,fullPath))
+        return filesR
     @staticmethod
     def getDirectories(userName):
         user_dir = os.path.join('/home',userName)
         dirs=[]
-        for dir in os.listdir(user_dir):
-            if(os.path.isdir(os.path.join(user_dir,dir))):
-                dirs.append(dir)
-        ##transformer dirs en une list de dict, dont chaque case contient le nom du repertoire +les meta donnees du rep
-        return dirs
+        try:
+            for dir in os.listdir(user_dir):
+                if(os.path.isdir(os.path.join(user_dir,dir))):
+                    dirs.append((dir,True,'.',os.path.join(user_dir,dir)))
+            ##transformer dirs en une list de dict, dont chaque case contient le nom du repertoire +les meta donnees du rep
+            return dirs
+        except:
+            return dirs
     @staticmethod
     def getDirectoriesall(userName):
         user_dir = os.path.join('/home',userName)
         dirs=[]
-        for dir in os.listdir(user_dir):
-            dirs.append(dir)
-        ##transformer dirs en une list de dict, dont chaque case contient le nom du repertoire +les meta donnees du rep
-        return dirs
+        try:
+            for dir in os.listdir(user_dir):
+                if(os.path.isdir(os.path.join(user_dir,dir))):
+                    dirs.append((dir,True,'.',os.path.join(user_dir,dir)))
+                elif(os.path.isfile(os.path.join(user_dir,dir))):
+                    dirs.append((dir,False,os.stat(os.path.join(user_dir,dir)).st_size, os.path.join(user_dir,dir)))
+            return dirs
+        except:
+            return dirs
     @staticmethod
     def getFiles(userName):
         user_dir = os.path.join('/home',userName)
         files=[]
-        for file in os.listdir(user_dir):
-            if(os.path.isfile(os.path.join(user_dir,file))):
-                files.append(file)
-        ##transformer files en une list de dict, dont chaque case contient le nom du fichier +les meta donnees du fichier
-        return files
+        try:
+            for file in os.listdir(user_dir):
+                if(os.path.isfile(os.path.join(user_dir,file))):
+                    files.append((file,False,os.stat(os.path.join(user_dir,file)).st_size,os.path.join(user_dir,file)))
+            return files
+        except:
+            return files

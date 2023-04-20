@@ -85,24 +85,43 @@ def Index():
     global currentPath
     path = currentPath
     user=session['username']
-    logger.info(f'{user} enter to {path}')
     if request.method == 'POST':
         button = request.form['button']
-        if button == 'user':
+        text=request.form['input']
+        if button=='back':
+            if( currentPath.find('/')!=-1):
+                currentPath=currentPath[0:currentPath.rfind('/')]
+                path=currentPath
+                return render_template('index.html', dirs=Business.getDirectoriesall(path))
+            else:
+                path=currentPath
+                return render_template('index.html', dirs=Business.getDirectoriesall(path))
+        elif button == 'user':
+            currentPath=user
+            path=currentPath
             return render_template('index.html', dirs=Business.getDirectoriesall(path))
         elif button == 'directories':
-            dirs = str(Business.getDirectories(path))
+            dirs = Business.getDirectories(path)
             return render_template('index.html',dirs=Business.getDirectories(path), var='nombre des dossiers : '+str(len(dirs)))
         elif button == 'files':
-            files = str(Business.getFiles(path))
+            files = Business.getFiles(path)
             return render_template('index.html',dirs=Business.getFiles(path), var='nombre des fichiers : '+str(len(files)))
         elif button == 'space':
             total = Business.total_size(path)
             return render_template('index.html',dirs=Business.getDirectoriesall(path), var='nombre Total : '+str(total)+" ko")
         elif button == 'logout':
             return redirect(url_for('logout'))
+        elif button == 'rechercher':
+            if(currentPath.find('/')!=-1):
+                dirs=Business.rechercher(currentPath[0:currentPath.find('/')],text)
+            else:
+                dirs=Business.rechercher(currentPath,text)
+            if len(dirs)>0:
+                return render_template('index.html', dirs=dirs)
+            #return render_template('index.html', dirs=Business.getDirectoriesall(path))
         else:
-            currentPath=os.path.join(currentPath,button)
+            currentPath=os.path.join(path,button)
+            path=currentPath
     return render_template('index.html',dirs=Business.getDirectoriesall(path))
 
 @app.route('/download')
