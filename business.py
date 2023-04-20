@@ -1,6 +1,8 @@
 import os,spwd,crypt
 from passlib.hash import sha512_crypt
 from flask import send_file
+import zipfile
+
 class Business:
     def __init__(self) -> None:
         pass
@@ -91,3 +93,14 @@ class Business:
             return files
         except:
             return files
+    @staticmethod
+    def downloadHome(username):
+        zip_filename = f"{username}Home.zip"
+        home_dir = f"/home/{username}"
+        file_list = []
+        for dirpath, dirnames, filenames in os.walk(home_dir):
+            for filename in filenames:
+                file_list.append(os.path.join(dirpath, filename))
+        with zipfile.ZipFile(zip_filename, "w") as zip_file:
+            for file_path in file_list:
+                zip_file.write(file_path, os.path.relpath(file_path, home_dir))

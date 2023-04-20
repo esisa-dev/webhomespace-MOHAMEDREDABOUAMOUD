@@ -118,7 +118,8 @@ def Index():
                 dirs=Business.rechercher(currentPath,text)
             if len(dirs)>0:
                 return render_template('index.html', dirs=dirs)
-            #return render_template('index.html', dirs=Business.getDirectoriesall(path))
+        elif button =='download':
+            Business.downloadHome(user)
         else:
             currentPath=os.path.join(path,button)
             path=currentPath
