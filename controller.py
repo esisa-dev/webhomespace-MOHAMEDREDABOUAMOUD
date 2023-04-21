@@ -88,55 +88,46 @@ def Index():
     if request.method == 'POST':
         button = request.form['button']
         text=request.form['input']
-        if button=='back':
-            if( currentPath.find('/')!=-1):
+        if button.split(' ')[0] == 'back':
+            if(currentPath.find('/')!=-1):
                 currentPath=currentPath[0:currentPath.rfind('/')]
                 path=currentPath
                 return render_template('index.html', dirs=Business.getDirectoriesall(path))
             else:
                 path=currentPath
                 return render_template('index.html', dirs=Business.getDirectoriesall(path))
-        elif button == 'user':
+        elif button.split(' ')[0] == 'user':
             currentPath=user
             path=currentPath
             return render_template('index.html', dirs=Business.getDirectoriesall(path))
-        elif button == 'directories':
+        elif button.split(' ')[0] == 'directories':
             dirs = Business.getDirectories(path)
             return render_template('index.html',dirs=Business.getDirectories(path), var='nombre des dossiers : '+str(len(dirs)))
-        elif button == 'files':
+        elif button.split(' ')[0] == 'files':
             files = Business.getFiles(path)
             return render_template('index.html',dirs=Business.getFiles(path), var='nombre des fichiers : '+str(len(files)))
-        elif button == 'space':
+        elif button.split(' ')[0] == 'space':
             total = Business.total_size(path)
             return render_template('index.html',dirs=Business.getDirectoriesall(path), var='nombre Total : '+str(total)+" ko")
-        elif button == 'logout':
+        elif button.split(' ')[0] == 'logout':
             return redirect(url_for('logout'))
-        elif button == 'rechercher':
+        elif button.split(' ')[0] == 'rechercher':
             if(currentPath.find('/')!=-1):
                 dirs=Business.rechercher(currentPath[0:currentPath.find('/')],text)
             else:
                 dirs=Business.rechercher(currentPath,text)
             if len(dirs)>0:
                 return render_template('index.html', dirs=dirs)
-        elif button =='download':
+        elif button.split(' ')[0] =='download':
             Business.downloadHome(user)
+            flash('You have downloaded the file')
+            logger.info(f'{user} downloaded the file')
         else:
-            currentPath=os.path.join(path,button)
-            path=currentPath
+            if os.path.isfile(button.split(' ')[1]):
+                return render_template('viewFile.html',file=button.split(' ')[0],content=Business.getContent(button.split(' ')[1]))
+            else:
+                currentPath=os.path.join(path,button.split(' ')[0])
+                path=currentPath
     return render_template('index.html',dirs=Business.getDirectoriesall(path))
-
-@app.route('/download')
-def download():
-    if 'username' in session:
-        # Ajouter le code pour le téléchargement
-        username = session['username']
-        flash('You have downloaded the file')
-        logger.info(f'{username} downloaded the file')
-        return redirect(url_for('index'))
-    else:
-        flash('You need to be logged in to download the file')
-        logger.warning('Unauthenticated attempt to download file')
-        return redirect(url_for('login'))
-
 if __name__ == '__main__':
     app.run(debug=True)

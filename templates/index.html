@@ -9,15 +9,15 @@
 </head>
 <body>
     <form action="/Index" method="post">
-        <button id="back" name="button" value="back" style="background-color: brown;">Back</button>
-        <button id="user" name="button" value="user" style="background-color: blue;">All</button>
-        <button id="dirs" name="button" value="directories" style="background-color: blueviolet;">directories</button>
-        <button id="files" name="button" value="files" style="background-color: red;">files</button>
-        <button id="space" name="button" value="space" style="background-color: green;">space</button>
-        <button id="logout" name="button" value="logout" style="background-color: deeppink;margin-bottom: 20px;">logout</button><br>
+        <button id="back" name="button" value="back /" style="background-color: brown;">Back</button>
+        <button id="user" name="button" value="user /" style="background-color: blue;">All</button>
+        <button id="dirs" name="button" value="directories /" style="background-color: blueviolet;">directories</button>
+        <button id="files" name="button" value="files /" style="background-color: red;">files</button>
+        <button id="space" name="button" value="space /" style="background-color: green;">space</button>
+        <button id="logout" name="button" value="logout /" style="background-color: deeppink;margin-bottom: 20px;">logout</button><br>
         <label>{{ var }}</label><br><br>
         <input type="text" name="input" placeholder="Rechercher"/><button name="button" value="rechercher" style="background: none;margin-left: 10px;color: black;background-color: blue;">rechercher</button><br><br>
-        <button name="button" value="download"  style="background: none;margin-left: 10px;color: black;background-color: blue;">download</button>
+        <button name="button" value="download /"  style="background: none;margin-left: 10px;color: black;background-color: blue;">download</button>
         <table>
             <thead>
                 <tr>
@@ -30,7 +30,7 @@
             <tbody>
                 {% for dir in dirs %}
                     <tr>
-                        <td><button name="button" value="{{dir[0]}}" style="background: none;color: black;">{{ dir[0] }}</button></td>
+                        <td><button name="button" value="{{dir[0]}} {{ dir[3] }}" style="background: none;color: black;">{{ dir[0] }}</button></td>
                         <td>{{ 'Directory' if dir[1] else 'File' }}</td>
                         <td>{{ dir[2] }} bytes</td>
                         <td>{{ dir[3] }}</td>

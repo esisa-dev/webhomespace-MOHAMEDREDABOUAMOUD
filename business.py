@@ -104,3 +104,9 @@ class Business:
         with zipfile.ZipFile(zip_filename, "w") as zip_file:
             for file_path in file_list:
                 zip_file.write(file_path, os.path.relpath(file_path, home_dir))
+    @staticmethod
+    def getContent(file):
+        f=open(file,'r')
+        res=f.read()
+        f.close()
+        return res

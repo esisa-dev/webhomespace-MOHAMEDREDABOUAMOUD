@@ -3,16 +3,16 @@
 
 # Cette application contient les services suivants : 
 ## Authentification basée sur le système (/etc/shadow)
-## Les actions login, logout et téléchargement doivent être tracée dans un ficher log de l’app.
-## Une fois connecté, l’utilisateur verra son home directory affichée dans une table.
-## Cette table permettra à l’utilisateur connecté de naviguer dans les répertoires.
-## Dans le cas d’un fichier text on affichera son contenu.
-## recherche des fichier par nom par extension dans le home directory de l’utilisateur et les affiches dans la table
-## télécharger le home directory de l’utilisateur connecté en forme zip
+* Les actions login, logout et téléchargement doivent être tracée dans un ficher log de l’app.
+* Une fois connecté, l’utilisateur verra son home directory affichée dans une table.
+* Cette table permettra à l’utilisateur connecté de naviguer dans les répertoires.
+* Dans le cas d’un fichier text on affichera son contenu.
+* recherche des fichier par nom par extension dans le home directory de l’utilisateur et les affiches dans la table
+* télécharger le home directory de l’utilisateur connecté en forme zip
 # Langages de programmation et technologies utilises :
 ## Frontend 
-### HTML5/CSS3
+* HTML5/CSS3
 ## Backend
-### Flask (python3.10)
+* Flask (python3.10)
 
 ### note : l'utilisateur doit naviger dans la table en utilisant juste ce que l'application lui offre comme buttons ou hyperlien
