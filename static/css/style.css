@@ -1,11 +1,10 @@
 button{
-    text-decoration: underline;
     padding: 10px;
     min-height: 30px;
     min-width: 50px;
     color: #fff;
     border: 0px solid;
-    border-radius: 2px;
+    border-radius: 20px;
 }
 button:hover{
     cursor: pointer;
@@ -24,8 +23,7 @@ input{
     width: 250px;
     border: 1px solid gray;
     border-radius: 10px;  
-    padding-left: 20px;  
-    margin-top: 20px;
+    padding-left: 20px;
 }
 h1{
     font-size: 30px;font-weight: bold;
@@ -33,7 +31,7 @@ h1{
 
 table {
     border-collapse: collapse;
-    width: 50%;
+    width: 100%;
     margin-top: 30px;
     border-top: 1px solid black;
     border-left: 1px solid black;

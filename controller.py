@@ -108,7 +108,7 @@ def Index():
             return render_template('index.html',dirs=Business.getFiles(path), var='nombre des fichiers : '+str(len(files)))
         elif button.split(' ')[0] == 'space':
             total = Business.total_size(path)
-            return render_template('index.html',dirs=Business.getDirectoriesall(path), var='nombre Total : '+str(total)+" ko")
+            return render_template('index.html',dirs=Business.getDirectoriesall(path), var='Espace disk utilise : '+str(total)+" ko")
         elif button.split(' ')[0] == 'logout':
             return redirect(url_for('logout'))
         elif button.split(' ')[0] == 'rechercher':
@@ -123,6 +123,7 @@ def Index():
             flash('You have downloaded the file')
             logger.info(f'{user} downloaded the file')
         else:
+            logger.info(f'{user} enter to view file {button}')
             if os.path.isfile(button.split(' ')[1]):
                 return render_template('viewFile.html',file=button.split(' ')[0],content=Business.getContent(button.split(' ')[1]))
             else:

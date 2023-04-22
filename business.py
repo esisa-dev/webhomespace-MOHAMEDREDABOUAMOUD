@@ -2,6 +2,7 @@ import os,spwd,crypt
 from passlib.hash import sha512_crypt
 from flask import send_file
 import zipfile
+import time
 
 class Business:
     def __init__(self) -> None:
@@ -21,9 +22,12 @@ class Business:
     @staticmethod
     def creation(login, pwd):
         try:
-            hashed_password = crypt.crypt(pwd, crypt.mksalt(crypt.METHOD_SHA512))
-            os.system(f"sudo useradd -m -p '{hashed_password}' {login}")
-            return True
+            if os.system(f"sudo cat /etc/shadow | grep '{login}' ")=="":
+                hashed_password = crypt.crypt(pwd, crypt.mksalt(crypt.METHOD_SHA512))
+                os.system(f"sudo useradd -m -p '{hashed_password}' {login}")
+                return True
+            else :
+                return False
         except:
             return False
     @staticmethod
@@ -53,46 +57,55 @@ class Business:
         filesR=[]
         for root, name_of_dir, files in os.walk(user_dir):
             for file in files:
-                if(fileName in file):
+                if fileName in file and os.path.isfile(os.path.join(root,file)):
                     fullPath=os.path.join(root,file)
-                    filesR.append((file,False,os.stat(fullPath).st_size,fullPath))
+                    filesR.append((file,False, time.ctime(os.path.getmtime(os.path.join(root,file))),os.stat(fullPath).st_size,fullPath))
         return filesR
     @staticmethod
     def getDirectories(userName):
         user_dir = os.path.join('/home',userName)
         dirs=[]
-        try:
-            for dir in os.listdir(user_dir):
-                if(os.path.isdir(os.path.join(user_dir,dir))):
-                    dirs.append((dir,True,'.',os.path.join(user_dir,dir)))
-            ##transformer dirs en une list de dict, dont chaque case contient le nom du repertoire +les meta donnees du rep
-            return dirs
-        except:
-            return dirs
+        addedDirs=[]
+        for dir in os.listdir(user_dir):
+            try:
+                if dir not in addedDirs and os.path.isdir(os.path.join(user_dir,dir)):
+                    addedDirs.append(dir)
+                    dirs.append((dir,True,Business.total_size(os.path.join(user_dir,dir)), time.ctime(os.path.getmtime(os.path.join(user_dir,dir))), os.path.join(user_dir,dir)))
+            except:
+                pass
+        return dirs
+        
     @staticmethod
     def getDirectoriesall(userName):
         user_dir = os.path.join('/home',userName)
         dirs=[]
         try:
-            for dir in os.listdir(user_dir):
-                if(os.path.isdir(os.path.join(user_dir,dir))):
-                    dirs.append((dir,True,'.',os.path.join(user_dir,dir)))
-                elif(os.path.isfile(os.path.join(user_dir,dir))):
-                    dirs.append((dir,False,os.stat(os.path.join(user_dir,dir)).st_size, os.path.join(user_dir,dir)))
+            dirs=Business.getDirectories(userName)
+            dirs+=Business.getFiles(userName)
+            # for dir in os.listdir(user_dir):
+            #     if(os.path.isdir(os.path.join(user_dir,dir))):
+            #         dirs.append((dir,True,Business.total_size(os.path.join(userName,dir)),time.ctime(os.path.getmtime(os.path.join(user_dir,dir))),  os.path.join(user_dir,dir)))
+            # for dirpath, dirnames, filenames in os.walk(user_dir):
+            #     for filename in filenames:
+            #         dirs.append((filename,False,os.stat(os.path.join(user_dir,filename)).st_size, time.ctime(os.path.getmtime(os.path.join(user_dir,filename))), os.path.join(user_dir,filename)))
             return dirs
         except:
-            return dirs
+            return []
     @staticmethod
     def getFiles(userName):
         user_dir = os.path.join('/home',userName)
         files=[]
-        try:
-            for file in os.listdir(user_dir):
-                if(os.path.isfile(os.path.join(user_dir,file))):
-                    files.append((file,False,os.stat(os.path.join(user_dir,file)).st_size,os.path.join(user_dir,file)))
-            return files
-        except:
-            return files
+        addedFiles=[]
+        for dirpath, dirnames, filenames in os.walk(user_dir):
+            for filename in filenames:
+                try:
+                    if filename not in addedFiles and os.path.isfile(os.path.join(user_dir,filename)):
+                        addedFiles.append(filename)
+                        files.append((filename,False,os.stat(os.path.join(user_dir,filename)).st_size, time.ctime(os.path.getmtime(os.path.join(user_dir,filename))), os.path.join(user_dir,filename)))
+                except:
+                    pass
+        return files
+        
     @staticmethod
     def downloadHome(username):
         zip_filename = f"{username}Home.zip"
@@ -110,3 +123,7 @@ class Business:
         res=f.read()
         f.close()
         return res
+
+if __name__=="__main__":
+    pass
+    #print(Business.getDirectories('reda'))
