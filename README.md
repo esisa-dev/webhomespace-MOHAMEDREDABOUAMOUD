@@ -2,8 +2,8 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10834848&assignment_repo_type=AssignmentRepo)
 
 # Cette application contient les services suivants : 
-## Authentification basée sur le système (/etc/shadow)
-* Les actions login, logout et téléchargement doivent être tracée dans un ficher log de l’app.
+* Authentification basée sur le système (/etc/shadow)
+* Les actions login, logout et téléchargement sont tracée dans un ficher log de l’app.
 * Une fois connecté, l’utilisateur verra son home directory affichée dans une table.
 * Cette table permettra à l’utilisateur connecté de naviguer dans les répertoires.
 * Dans le cas d’un fichier text on affichera son contenu.
