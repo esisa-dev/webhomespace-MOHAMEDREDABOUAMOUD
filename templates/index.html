@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <form action="/Index" method="post">
+        <h1 style="text-align: center;font-weight: bolder;margin-bottom: 20px;">Welcome to your Home space</h1>
+        <div style="width: 100%;display: flex;">
+            <div style="text-align: left;width: 100%;">
+                <button id="back" name="button" value="back /" style="font-size: 20px;height: 50px;width: 110px;background-color: brown;"><i class="fa fa-arrow-left"></i></button>
+            </div>
+            <div style="text-align: center;width: 100%;">
+                <button id="user" name="button" value="user /" style="font-size: 20px;height: 50px;width: 110px;background-color: blue;"><i class="fa fa-male"></i></button>
+                <button id="dirs" name="button" value="directories /" style="font-size: 20px;height: 50px;width: 110px;background-color: blueviolet;"><i class="fa fa-folder"></i></button>
+                <button id="files" name="button" value="files /" style="font-size: 20px;height: 50px;width: 110px;background-color: red;"><i class="fa fa-file"></i></button>
+                <button id="space" name="button" value="space /" style="font-size: 20px;height: 50px;width: 110px;background-color: green;"><i style="font-size: 20px;" class="material-icons">&#xe1db;</i></button>
+                <button id="download" name="button" value="download /"  style="font-size: 20px;height: 50px;width: 110px;background: none;background-color: blue;"><i class="fa fa-download"></i></button>
+            </div>
+            <div style="text-align: right;width: 100%;">
+                <input type="text" name="input" placeholder="Rechercher" style="height: 50px;width: 220px;"/>
+                <button name="button" value="rechercher" style="background: none;margin-left: 10px;background-color: blue;height: 50px;width: 110px;"><i style="font-size: 20px;" class="fa fa-search"></i></button>
+                <button id="logout" name="button" value="logout /" style="font-size: 20px;height: 50px;width: 110px;background-color: deeppink;"><i class="fa fa-sign-out"></i></button><br>
+            </div>
+        </div>
+        <label>{{ var }}</label><br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>last mod date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dir in dirs %}
+                    <tr>
+                        <td><button name="button" value="{{dir[0]}} {{dir[4]}}" style="background: none;color: black;text-decoration: underline;">{{ dir[0] }}</button></td>
+                        <td>{{ 'Directory' if dir[1] else 'File' }}</td>
+                        <td>{{ dir[2] }} bytes</td>
+                        <td>{{ dir[3] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>        
